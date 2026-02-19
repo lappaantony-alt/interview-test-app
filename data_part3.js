@@ -326,7 +326,7 @@ window.QUIZ_DATA.push(...[
         ]
     },
     {
-        "id": 135, "topic": "HTTP", "question": "Що таке HTTP?", "answer": "HTTP (Hypertext Transfer Protocol) – це protocol для передачі даних між клієнтом і сервером у вебі.",
+        "id": 135, "topic": "HTTP", "question": "Що таке HTTP?", "answer": "HTTP (Hypertext Transfer Protocol) – це протокол для передачі даних між клієнтом і сервером у вебі.",
         "wrongAnswers": [
             "Мова програмування для створення веб-сторінок.",
             "База даних для зберігання гіпертекстових файлів."
