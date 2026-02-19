@@ -192,7 +192,7 @@ window.QUIZ_DATA.push(...[
         ]
     },
     {
-        "id": 77, "topic": "Java Collections", "question": "Що таке fail-fast та fail-safe ітератори?", "answer": "Fail-fast ітератори кидають ConcurrentModificationException, якщо колекція змінюється під час ітерації; fail-safe ітератори працюють con копією.",
+        "id": 77, "topic": "Java Collections", "question": "Що таке fail-fast та fail-safe ітератори?", "answer": "Fail-fast ітератори кидають ConcurrentModificationException, якщо колекція змінюється під час ітерації; fail-safe ітератори працюють з копією.",
         "wrongAnswers": [
             "Fail-fast працюють швидше, але частіше ламають комп'ютер розробника.",
             "Це режими роботи Garbage Collector'а при великому навантаженні на ОЗУ."
@@ -220,7 +220,7 @@ window.QUIZ_DATA.push(...[
         ]
     },
     {
-        "id": 81, "topic": "Java Collections", "question": "Яка різниця між Array і ArrayList?", "answer": "Масив має фіксований розмір і може містити примітиви; ArrayList має динамічний розмір і працює лише con об’єктами.",
+        "id": 81, "topic": "Java Collections", "question": "Яка різниця між Array і ArrayList?", "answer": "Масив має фіксований розмір і може містити примітиви; ArrayList має динамічний розмір і працює лише з об’єктами.",
         "wrongAnswers": [
             "Масив працює повільніше, ніж ArrayList, у 100 разів.",
             "Array – це частина Java, а ArrayList – це зовнішня бібліотека від Google."
@@ -283,7 +283,7 @@ window.QUIZ_DATA.push(...[
         ]
     },
     {
-        "id": 90, "topic": "Functional Interfaces", "question": "Що таке UnaryOperator та BinaryOperator?", "answer": "UnaryOperator<T> – приймає і повертає один тип даних; BinaryOperator<T> – працює con двома аргументами одного типу.",
+        "id": 90, "topic": "Functional Interfaces", "question": "Що таке UnaryOperator та BinaryOperator?", "answer": "UnaryOperator<T> – приймає і повертає один тип даних; BinaryOperator<T> – працює з двома аргументами одного типу.",
         "wrongAnswers": [
             "Це спеціалісти, які обслуговують бази даних у великих центрах даних.",
             "Оператори, що працюють тільки з одиницями та нулями в бінарному коді."
