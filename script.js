@@ -1,4 +1,71 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Translations
+    const translations = {
+        ua: {
+            app_title: "Interview Test",
+            welcome_title: "Готові до тесту?",
+            welcome_text: "Оберіть категорію або пройдіть всі 148 питань.",
+            start_all: "Всі питання",
+            loading_question: "Запитання з'явиться тут...",
+            exit_btn: "Вийти",
+            next_btn: "Далі",
+            result_title: "Тест завершено!",
+            result_label: "Результат",
+            correct_label: "Правильно",
+            home_btn: "На головну",
+            results_label: "Результати",
+            quiz_exit_confirm: "Бажаєте вийти з тесту? Прогрес буде втрачено.",
+            back_confirm: "Бажаєте повернутися? Прогрес буде втрачено.",
+            no_data_alert: "Дані не завантажено або категорія порожня. Спробуйте оновити сторінку.",
+            result_msg_100: "Чудово! Ви знаєте все на 100%!",
+            result_msg_80: "Гарний результат! Ви майже готові.",
+            result_msg_50: "Непогано, але варто ще підучити.",
+            result_msg_0: "Спробуйте ще раз, попереду багато цікавого."
+        },
+        en: {
+            app_title: "Interview Test",
+            welcome_title: "Ready for the test?",
+            welcome_text: "Choose a category or complete all 148 questions.",
+            start_all: "All questions",
+            loading_question: "The question will appear here...",
+            exit_btn: "Exit",
+            next_btn: "Next",
+            result_title: "Test completed!",
+            result_label: "Score",
+            correct_label: "Correct",
+            home_btn: "Home",
+            results_label: "Results",
+            quiz_exit_confirm: "Do you want to exit the test? Progress will be lost.",
+            back_confirm: "Do you want to go back? Progress will be lost.",
+            no_data_alert: "Data not loaded or category is empty. Try refreshing the page.",
+            result_msg_100: "Excellent! You know everything at 100%!",
+            result_msg_80: "Good result! You are almost ready.",
+            result_msg_50: "Not bad, but it's worth studying more.",
+            result_msg_0: "Try again, there are many interesting things ahead."
+        },
+        de: {
+            app_title: "Interview Test",
+            welcome_title: "Bereit für den Test?",
+            welcome_text: "Wählen Sie eine Kategorie oder beantworten Sie alle 148 Fragen.",
+            start_all: "Alle Fragen",
+            loading_question: "Die Frage wird hier erscheinen...",
+            exit_btn: "Beenden",
+            next_btn: "Weiter",
+            result_title: "Test abgeschlossen!",
+            result_label: "Ergebnis",
+            correct_label: "Richtig",
+            home_btn: "Zum Hauptmenü",
+            results_label: "Ergebnisse",
+            quiz_exit_confirm: "Möchten Sie den Test beenden? Der Fortschritt geht verloren.",
+            back_confirm: "Möchten Sie zurückkehren? Der Fortschritt geht verloren.",
+            no_data_alert: "Daten nicht geladen oder Kategorie ist leer. Versuchen Sie, die Seite zu aktualisieren.",
+            result_msg_100: "Hervorragend! Sie wissen alles zu 100%!",
+            result_msg_80: "Gutes Ergebnis! Sie sind fast bereit.",
+            result_msg_50: "Nicht schlecht, aber es lohnt sich, noch mehr zu lernen.",
+            result_msg_0: "Versuchen Sie es noch einmal, es gibt noch viel Interessantes zu entdecken."
+        }
+    };
+
     // State management
     let state = {
         quizData: [],
@@ -6,7 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
         currentIndex: 0,
         score: 0,
         answered: false,
-        selectedTopic: 'all'
+        selectedTopic: 'all',
+        currentLang: localStorage.getItem('quiz_lang') || 'ua'
     };
 
     // DOM Elements
@@ -28,14 +96,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const exitBtn = document.getElementById('exit-quiz');
     const restartBtn = document.getElementById('restart-btn');
     const backBtn = document.getElementById('back-btn');
+    const langBtns = document.querySelectorAll('.lang-btn');
 
     // Initialization
     function init() {
-        if (typeof QUIZ_DATA !== 'undefined') {
-            state.quizData = QUIZ_DATA;
-            renderTopics();
+        switchLanguage(state.currentLang);
+        renderTopics();
+    }
+
+    function switchLanguage(lang) {
+        state.currentLang = lang;
+        localStorage.setItem('quiz_lang', lang);
+
+        // Update active class on buttons
+        langBtns.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+
+        // Set quiz data based on language
+        if (lang === 'en') {
+            state.quizData = window.QUIZ_DATA_EN || [];
+        } else if (lang === 'de') {
+            state.quizData = window.QUIZ_DATA_DE || [];
         } else {
-            console.error('Quiz data not found!');
+            state.quizData = window.QUIZ_DATA || [];
+        }
+
+        // Update Static strings
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.dataset.i18n;
+            if (translations[lang][key]) {
+                el.innerText = translations[lang][key];
+            }
+        });
+
+        // Re-render topics if on home screen
+        if (screens.home.classList.contains('active')) {
+            renderTopics();
         }
     }
 
@@ -78,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             : state.quizData.filter(q => q.topic === topic);
 
         if (filtered.length === 0) {
-            alert('Дані не завантажено або категорія порожня. Спробуйте оновити сторінку.');
+            alert(translations[state.currentLang].no_data_alert);
             return;
         }
 
@@ -122,26 +219,21 @@ document.addEventListener('DOMContentLoaded', () => {
         state.answered = true;
 
         const options = optionsList.querySelectorAll('.option');
-        options.forEach(opt => {
-            // Find which one was correct to highlight it if user was wrong
-            // We'll just highlight the one clicked and the correct one anyway
-        });
 
         if (isCorrect) {
             element.classList.add('correct');
             state.score++;
         } else {
             element.classList.add('wrong');
-            // Show the correct one
             const q = state.currentQuestions[state.currentIndex];
             Array.from(options).find(opt => opt.textContent === q.answer)?.classList.add('correct');
         }
 
         nextBtn.classList.remove('hidden');
         if (state.currentIndex === state.currentQuestions.length - 1) {
-            nextBtn.textContent = 'Результати';
+            nextBtn.textContent = translations[state.currentLang].results_label;
         } else {
-            nextBtn.textContent = 'Далі';
+            nextBtn.textContent = translations[state.currentLang].next_btn;
         }
     }
 
@@ -171,10 +263,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('correct-count').textContent = `${state.score}/${total}`;
 
         let msg = '';
-        if (percent === 100) msg = 'Чудово! Ви знаєте все на 100%!';
-        else if (percent > 80) msg = 'Гарний результат! Ви майже готові.';
-        else if (percent > 50) msg = 'Непогано, але варто ще підучити.';
-        else msg = 'Спробуйте ще раз, попереду багато цікавого.';
+        const t = translations[state.currentLang];
+        if (percent === 100) msg = t.result_msg_100;
+        else if (percent > 80) msg = t.result_msg_80;
+        else if (percent > 50) msg = t.result_msg_50;
+        else msg = t.result_msg_0;
 
         document.getElementById('result-message').textContent = msg;
     }
@@ -183,19 +276,23 @@ document.addEventListener('DOMContentLoaded', () => {
     startAllBtn.addEventListener('click', () => startQuiz('all'));
     nextBtn.addEventListener('click', nextQuestion);
     exitBtn.addEventListener('click', () => {
-        if (confirm('Бажаєте вийти з тесту? прогрес буде втрачено.')) {
+        if (confirm(translations[state.currentLang].quiz_exit_confirm)) {
             showScreen('home');
         }
     });
     restartBtn.addEventListener('click', () => showScreen('home'));
     backBtn.addEventListener('click', () => {
         if (screens.quiz.classList.contains('active')) {
-            if (confirm('Бажаєте повернутися? Прогрес буде втрачено.')) {
+            if (confirm(translations[state.currentLang].back_confirm)) {
                 showScreen('home');
             }
         } else {
             showScreen('home');
         }
+    });
+
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', () => switchLanguage(btn.dataset.lang));
     });
 
     // PWA Support

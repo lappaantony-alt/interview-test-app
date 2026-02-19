@@ -1,0 +1,519 @@
+﻿Git
+1. Was ist Git?
+ Git ist ein verteiltes Versionskontrollsystem, das es ermöglicht, Änderungen im Code nachzuverfolgen und die Zusammenarbeit zwischen Entwicklern zu koordinieren.
+
+2. Welche Hauptbefehle von Git kennst du?
+ Die gängigsten Befehle sind git init, git clone, git add, git commit, git push, git pull, git branch, git merge, git status und git log.
+
+3. Was ist ein Commit?
+ Ein Commit speichert den aktuellen Stand der Änderungen im lokalen Repository zusammen mit einer Nachricht, die die vorgenommenen Änderungen beschreibt.
+
+4. Wie kehrt man zu einem vorherigen Commit zurück?
+ Du kannst git revert verwenden (erstellt einen neuen Commit, der die Änderungen rückgängig macht) oder git reset (ändert die Historie lokal und kann riskant sein).
+
+5. Was ist ein Branch in Git?
+ Ein Branch ist eine separate Entwicklungslinie, die es ermöglicht, neue Features oder Bugfixes isoliert von dem Haupt-Branch zu entwickeln.
+
+6. Wie führt man Branches zusammen (Merge)?
+ Das Zusammenführen von Branches erfolgt mit dem Befehl git merge, der Änderungen eines Branches in einen anderen integriert.
+
+7. Was ist ein Merge-Konflikt?
+ Ein Merge-Konflikt tritt auf, wenn zwei Branches widersprüchliche Änderungen in derselben Zeile einer Datei enthalten. Die Konfliktlösung erfordert manuelles Eingreifen.
+
+8. Was ist der Unterschied zwischen Git fetch und Git pull?
+ git fetch lädt die neuesten Änderungen aus dem Remote-Repository herunter, fügt sie aber nicht in den lokalen Branch ein. git pull lädt und führt den Merge gleichzeitig durch.
+
+9. Was ist git rebase?
+ Ein Rebase ermöglicht das „Umschreiben“ der Commithistorie, indem der aktuelle Branch auf einen anderen Branch neu aufgesetzt wird, was zu einer lineareren Commithistorie führt.
+
+10. Welche Vor- und Nachteile hat das Rebase?
+
+   * Vorteile: Eine aufgeräumtere Commithistorie, Änderungen sind leichter nachzuvollziehen
+   * Nachteile: Die Historie wird verändert, was die Zusammenarbeit erschweren kann, wenn Commits bereits veröffentlicht wurden.
+________________
+
+
+Maven
+   11. Was ist Maven?
+ Maven ist ein Projektmanagement-Tool, das den Build-Prozess, das Abhängigkeitsmanagement und das Deployment von Java-Anwendungen automatisiert.
+
+   12. Was sind die Hauptkomponenten von Maven?
+ Die Hauptkomponenten sind das POM (Project Object Model), Repositories, Lifecycle-Phasen und Plugins.
+
+   13. Was ist ein POM?
+ Ein POM ist eine XML-Datei (pom.xml), die die Projektkonfiguration, Abhängigkeiten, Plugins und weitere Einstellungen beschreibt.
+
+   14. Wie funktioniert das Abhängigkeitssystem in Maven?
+ Maven lädt die benötigten Bibliotheken automatisch aus entfernten Repositories entsprechend den Vorgaben im POM herunter und löst auch transitive Abhängigkeiten auf.
+
+   15. Was ist der Maven-Lifecycle?
+ Der Lifecycle ist eine Abfolge von Phasen (z. B. validate, compile, test, package, install, deploy), die ein Projekt während des Build-Prozesses durchläuft.
+
+   16. Wie fügt man eine Abhängigkeit in Maven hinzu?
+ Eine Abhängigkeit wird in den Abschnitt <dependencies> der pom.xml eingefügt, wobei groupId, artifactId und version anzugeben sind.
+
+   17. Was ist ein Plugin in Maven?
+ Ein Plugin ist eine Sammlung von Tools, die die Funktionalität von Maven erweitern (z. B. für Kompilierung, Tests oder das Erstellen von Archiven).
+
+   18. Wie führt man ein Maven-Build aus?
+ Du startest das Maven-Build über die Kommandozeile mit Befehlen wie mvn clean install oder einer anderen passenden Lifecycle-Phase.
+
+   19. Was ist das Dependency Management in Maven?
+ Das Dependency Management ermöglicht die zentrale Verwaltung von Abhängigkeitsversionen, indem diese in einem übergeordneten POM definiert werden, den Unterprojekte erben können.
+
+   20. Was ist das Maven-Repository und welche Typen gibt es?
+ Ein Repository ist ein Speicherort für Artefakte. Die wichtigsten Typen sind lokal (auf dem Rechner des Entwicklers), remote (z. B. Maven Central) und unternehmensintern.
+
+   21. Welche Maven-Befehle werden zum Testen eines Projekts verwendet?
+ Der Hauptbefehl für Testläufe ist mvn test. Zusätzlich gibt es mvn verify, der weitere Prüfungen beinhaltet.
+
+   22. Welche Alternativen zu Maven kennst du?
+ Gradle, Ant, SBT.
+
+________________
+
+
+Java-Grundlagen
+      23. Was ist die JVM?
+ Die JVM (Java Virtual Machine) ist eine virtuelle Maschine, die Java-Bytecode ausführt und Plattformunabhängigkeit ermöglicht.
+
+      24. Was sind JRE und JDK?
+
+         * JRE (Java Runtime Environment): Beinhaltet die JVM und Bibliotheken zum Ausführen von Programmen.
+         * JDK (Java Development Kit): Enthält die JRE plus Entwicklungswerkzeuge (Compiler, Debugger usw.).
+         25. Was ist Bytecode?
+ Bytecode ist der vom Java-Compiler erzeugte Zwischencode, der von der JVM ausgeführt wird.
+
+         26. Was ist eine Klasse?
+ Eine Klasse ist eine Blaupause, die die Eigenschaften (Felder) und das Verhalten (Methoden) von Objekten beschreibt.
+
+         27. Was ist ein Objekt?
+ Ein Objekt ist eine Instanz einer Klasse, mit einem spezifischen Zustand (Feldwerte) und ausführbaren Methoden.
+
+         28. Was ist eine Variable?
+ Eine Variable ist ein benannter Speicherbereich, der einen Wert eines bestimmten Datentyps speichert.
+
+         29. Welche Hauptdatentypen gibt es in Java?
+
+            * Primitive Datentypen: byte, short, int, long, float, double, char, boolean
+            * Objekttypen (z. B. String, Integer)
+            30. Was sind Operatoren in Java?
+ Operatoren sind Symbole oder Symbolkombinationen, die Operationen auf Daten ausführen (arithmetische, logische, Vergleichsoperatoren usw.).
+
+            31. Was ist eine Methode?
+ Eine Methode ist ein Codeblock, der eine bestimmte Aufgabe ausführt, Parameter empfangen und einen Wert zurückgeben kann.
+
+            32. Wie erstellt man eine Methode in Java?
+ Man deklariert sie mit einem Zugriffsmodifikator, einem Rückgabetyp, einem Methodennamen und einer Parameterliste, zum Beispiel:
+
+public int sum(int a, int b) {
+            return a + b;
+}
+
+
+               33. Was ist Kapselung (Encapsulation)?
+ Kapselung ist das OOP-Prinzip, die interne Implementierung einer Klasse zu verbergen und den Zugriff auf Daten über Methoden zu ermöglichen.
+
+               34. Was ist ein Package in Java?
+ Ein Package ist eine Gruppierung verwandter Klassen, die die Struktur eines Projekts organisiert und Namenskonflikte vermeidet.
+
+               35. Wie funktionieren Zugriffsmodifikatoren?
+ Die Zugriffsmodifikatoren (public, protected, private und Package-private) definieren die Sichtbarkeit von Klassen, Feldern und Methoden.
+
+               36. Was sind statische Methoden und statische Felder?
+ Eine statische Methode oder ein statisches Feld gehört zur Klasse selbst und nicht zu einer Instanz und kann ohne Objekterzeugung aufgerufen werden.
+
+               37. Was ist ein Konstruktor?
+ Ein Konstruktor ist eine spezielle Methode, die beim Erzeugen eines neuen Objekts aufgerufen wird und dessen Felder initialisiert.
+
+               38. Was ist eine Method Overloading (Überladen von Methoden)?
+ Method Overloading bedeutet, mehrere Methoden mit demselben Namen, aber unterschiedlichen Parameterlisten zu definieren.
+
+               39. Was ist Rekursion?
+ Rekursion ist ein Prozess, bei dem sich eine Methode selbst aufruft, um Teilprobleme zu lösen, bis eine Abbruchbedingung erreicht ist.
+
+               40. Was sind Ausnahmen (Exceptions) in Java?
+ Ausnahmen sind ein Mechanismus zur Fehlerbehandlung, der ermöglicht, Fehlerinformationen zu übergeben und sie mithilfe von try-catch-Blöcken zu verarbeiten.
+
+               41. Worin besteht der Unterschied zwischen checked und unchecked Exceptions?
+
+                  * Checked Exceptions: Werden vom Compiler überprüft und müssen behandelt oder in der Methodensignatur deklariert werden.
+                  * Unchecked Exceptions (RuntimeException): Werden vom Compiler nicht überprüft.
+
+                     42. Was sind Generics in Java?
+ Generics erlauben, Klassen und Methoden mit Typparametern zu versehen. Das erhöht die Typsicherheit zur Kompilierzeit und reduziert Typumwandlungen.
+
+                     43. Wie funktioniert Autoboxing?
+ Autoboxing wandelt primitive Datentypen automatisch in ihre entsprechenden Objekt-Wrapper (z. B. int zu Integer) und umgekehrt.
+
+                     44. Was ist ein enum in Java?
+ Ein enum ist ein spezieller Klassentyp, der einen Satz von Konstanten definiert, oft für eine begrenzte Anzahl möglicher Werte.
+
+                     45. Wie funktioniert das System der Class Loader?
+ Class Loader sind für das dynamische Laden von Klassen zur Laufzeit verantwortlich und verwenden getrennte Namensräume, um Konflikte zu vermeiden.
+
+                     46. Was ist eine Package-Deklaration und warum ist sie wichtig?
+ Eine Package-Deklaration gibt an, in welchem Namensraum sich eine Klasse befindet, was bei der Code-Organisation und Vermeidung von Namenskonflikten hilft.
+
+                     47. Was sind Annotationen in Java?
+ Annotationen sind spezielle Metadaten, die Klassen, Methoden oder Feldern hinzugefügt werden und vom Compiler oder Frameworks verwendet werden können.
+
+                     48. Wie deklariert und verwendet man eine eigene Annotation?
+ Man deklariert eine eigene Annotation mit @interface und kann sie dann über Klassen, Methoden oder Felder anwenden.
+
+________________
+
+
+Java OOP
+                        49. Was ist objektorientierte Programmierung (OOP)?
+ OOP ist ein Programmierparadigma, das auf Klassen und Objekten basiert und die Modellierung realer Konzepte ermöglicht.
+
+                        50. Was sind die Hauptprinzipien von OOP?
+ Die Hauptprinzipien sind Kapselung, Vererbung, Polymorphismus und Abstraktion.
+
+                        51. Was ist Vererbung (Inheritance)?
+ Vererbung ermöglicht es einer Klasse (Unterklasse), Eigenschaften und Methoden einer anderen Klasse (Oberklasse) zu übernehmen und fördert Code-Wiederverwendung.
+
+                        52. Was ist Polymorphismus?
+ Polymorphismus ermöglicht es Objekten verschiedener Klassen, auf dieselbe Schnittstelle zu reagieren, sodass derselbe Code verschiedene Typen behandeln kann.
+
+                        53. Was ist Abstraktion?
+ Abstraktion ist das Prinzip, die wesentlichen Merkmale eines Objekts hervorzuheben und Implementierungsdetails zu verbergen.
+
+                        54. Was ist ein Interface?
+ Ein Interface ist ein Vertrag, der einen Satz von Methoden deklariert, die eine Klasse implementieren muss, ohne deren Implementierung zu definieren.
+
+                        55. Wie verwendet man abstrakte Klassen?
+ Abstrakte Klassen werden genutzt, um Basislogik zu definieren, die von Unterklassen geerbt wird; sie können sowohl abstrakte als auch konkrete Methoden enthalten.
+
+                        56. Worin unterscheidet sich ein Interface von einer abstrakten Klasse?
+ Vor Java 8 enthält ein Interface keine Methodenumsetzungen, während eine abstrakte Klasse sowohl implementierte als auch abstrakte Methoden haben kann. Eine Klasse kann mehrere Interfaces implementieren, aber nur eine abstrakte Klasse erweitern.
+
+                        57. Was ist ein Marker-Interface und warum wird es verwendet?
+ Ein Marker-Interface enthält keine Methoden, sondern kennzeichnet eine Klasse als solche mit bestimmten Eigenschaften (z. B. Serializable).
+
+                        58. Was sind Default-Methoden in Interfaces?
+ Default-Methoden sind Methoden mit einer Implementierung in einem Interface, die es ermöglichen, Interfaces zu erweitern, ohne bestehende Implementierungen zu zerstören.
+
+                        59. Wie funktionieren statische Methoden in Interfaces?
+ Statische Methoden in Interfaces können aufgerufen werden, ohne eine Instanz des Interfaces zu erzeugen, und dienen oft als Hilfsfunktionen.
+
+                        60. Was ist Komposition?
+ Komposition liegt vor, wenn ein Objekt andere Objekte als Felder enthält, um komplexeres Verhalten zu erzielen.
+
+                        61. Worin unterscheidet sich Komposition von Vererbung?
+ Vererbung erweitert das Verhalten einer Klasse durch Übernahme, während Komposition neue Funktionalität aufbaut, indem andere Objekte eingebunden werden.
+
+                        62. Was ist Aggregation?
+ Aggregation ist eine Beziehung, bei der ein Objekt Teil eines anderen ist, aber auch unabhängig existieren kann.
+
+                        63. Wie funktioniert das Überladen von Methoden (Method Overloading)?
+ Es ermöglicht, mehrere Methoden mit demselben Namen, jedoch unterschiedlichen Typen oder Anzahlen von Parametern zu definieren.
+
+                        64. Was ist Methodenüberschreibung (Method Overriding)?
+ Eine Unterklasse definiert dabei ihre eigene Implementierung einer Methode, die bereits in der Oberklasse existiert.
+
+                        65. Welche Zugriffsmodifikatoren werden in OOP häufig verwendet?
+ Häufig verwendete sind public, protected, private und package-private (ohne expliziten Modifikator).
+
+                        66. Was ist eine final-Klasse?
+ Eine final-Klasse kann nicht weitervererbt werden, d. h. andere Klassen können sie nicht erweitern.
+
+                        67. Was bedeutet static?
+ Statische Felder und Methoden gehören zur Klasse selbst und nicht zu ihren Instanzen, was den Zugriff ohne Objekterzeugung ermöglicht.
+
+                        68. Wie ruft man den Konstruktor einer Oberklasse auf?
+ Man verwendet das Schlüsselwort super im Konstruktor der Unterklasse, um den Konstruktor der Oberklasse aufzurufen.
+
+                        69. Was ist Kapselung und warum ist sie wichtig?
+ Kapselung verbirgt die interne Logik einer Klasse und erlaubt den Zugriff nur über öffentliche Methoden, was Sicherheit und kontrollierten Datenzugriff fördert.
+
+                        70. Was sind die SOLID-Prinzipien in OOP?
+ SOLID ist eine Sammlung von Designprinzipien (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion), die bei der Erstellung von verständlichem, wartbarem und skalierbarem Code helfen.
+
+                        71. Wie stellt man sicher, dass ein Objekt in Java unveränderlich (immutable) ist?
+ Indem man die Klasse als final deklariert, alle Felder als private final ausweist und keine Setter-Methoden bereitstellt.
+
+________________
+
+
+Java Collections
+                           72. Was ist das Java Collections Framework?
+ Es ist eine Sammlung von Interfaces und Klassen, die Datenstrukturen (Listen, Mengen, Maps usw.) und Algorithmen zu deren Verarbeitung bereitstellen.
+
+                           73. Welche Hauptinterfaces gehören zum Collections Framework?
+ Die wichtigsten Interfaces sind Collection, List, Set, Queue und Map.
+
+                           74. Was ist eine List?
+ Eine List ist eine Sammlung, die Elemente in einer bestimmten Reihenfolge speichert und Duplikate zulässt.
+
+                           75. Was ist ein Set?
+ Ein Set ist eine Sammlung, die nur eindeutige Elemente speichert, ohne eine bestimmte Reihenfolge.
+
+                           76. Was ist eine Map?
+ Eine Map speichert Schlüssel-Wert-Paare, wobei jeder Schlüssel eindeutig ist.
+
+                           77. Welche Eigenschaften hat eine ArrayList?
+ ArrayList stellt ein dynamisches Array bereit, mit schnellem Zugriff per Index. Einfügen/Löschen kann jedoch langsamer sein.
+
+                           78. Wodurch unterscheidet sich LinkedList von ArrayList?
+ LinkedList basiert auf einer verketteten Liste, die schnelles Einfügen/Löschen ermöglicht, während ArrayList schnelleren Zugriff per Index bietet.
+
+                           79. Was ist ein HashSet?
+ HashSet ist eine Set-Implementierung, die eine Hashtabelle nutzt, um Elemente eindeutig zu speichern und schnellen Zugriff zu gewährleisten.
+
+                           80. Wie funktioniert TreeSet?
+ TreeSet speichert Elemente in sortierter Reihenfolge mittels eines Rot-Schwarz-Baumes, was schnellen Zugriff und Navigation ermöglicht.
+
+                           81. Was ist eine HashMap?
+ HashMap ist eine Map-Implementierung, die Daten als Schlüssel-Wert-Paare speichert und Hashing für schnellen Zugriff nutzt.
+
+                           82. Wodurch unterscheidet sich TreeMap von HashMap?
+ TreeMap speichert Einträge sortiert nach den Schlüsseln, während HashMap sie in keiner bestimmten Reihenfolge ablegt und üblicherweise bessere Leistung bei großen Datenmengen bietet.
+
+                           83. Was ist ein Iterator?
+ Ein Iterator ist ein Interface zum sequentiellen Durchlaufen einer Sammlung, ohne die interne Struktur offenzulegen.
+
+                           84. Wie verwendet man die foreach-Schleife in Java?
+
+for (String item : list) {
+                    System.out.println(item);
+}
+                              85. Was sind Concurrent Collections?
+ Concurrent Collections sind für den Einsatz in Mehrthread-Umgebungen konzipiert und ermöglichen sicheren gleichzeitigen Zugriff.
+
+                              86. Wie funktionieren equals() und hashCode() in Collections?
+
+                                 * equals(): Vergleicht Objekte auf Gleichheit
+                                 * hashCode(): Gibt einen Zahlenwert zurück, der zur Verteilung der Objekte in Hash-basierten Strukturen genutzt wird
+Eine korrekte Implementierung beider Methoden ist entscheidend für das korrekte Funktionieren der Collections.
+________________
+
+
+Funktionale Schnittstellen (Functional Interfaces)
+                                    87. Was ist ein funktionales Interface?
+ Ein funktionales Interface ist ein Interface, das nur eine abstrakte Methode enthält und für Lambda-Ausdrücke verwendet werden kann.
+
+                                    88. Welche Anforderungen gelten für ein funktionales Interface?
+ Es darf nur eine abstrakte Methode haben; zusätzlich sind default- und static-Methoden erlaubt.
+
+                                    89. Nenne ein Beispiel für ein funktionales Interface in Java.
+ Ein Beispiel ist Runnable, das nur die Methode run() enthält.
+
+
+
+                                       90. Wie verwendet man Lambda-Ausdrücke mit funktionalen Interfaces?
+ Lambda-Ausdrücke ermöglichen, die eine Methode des Interfaces kurz und prägnant umzusetzen, z. B.:  Runnable r = () -> System.out.println("Hello");
+
+                                       91. Was ist eine Method Reference (Methodenreferenz)?
+ Das ist eine Kurzform eines Lambda-Ausdrucks, die auf eine bestehende Methode verweist, z. B.: System.out::println.
+
+________________
+
+
+Streams
+                                          92. Was sind Streams in Java?
+ Streams sind ein API zur Verarbeitung von Datenfolgen auf deklarative Weise (über map, filter, reduce usw.).
+
+                                          93. Wie erzeugt man einen Stream aus einer Collection?
+ Mit der Methode .stream(), z. B. list.stream().
+
+                                          94. Was sind Intermediate Operations?
+ Das sind Operationen (filter, map, sorted), die einen neuen Stream zurückgeben und das Aneinanderreihen mehrerer Verarbeitungsschritte erlauben.
+
+                                          95. Was sind Terminal Operations?
+ Terminal Operations (collect, forEach, reduce) beenden die Stream-Verarbeitung und geben ein Ergebnis zurück.
+
+                                          96. Nenne ein Beispiel für die Verwendung der Operation map().
+
+List<Integer> nums = Arrays.asList(1, 2, 3);
+List<Integer> squares = nums.stream()
+                    .map(n -> n * n)
+                    .collect(Collectors.toList());
+                                             97. Wie verwendet man filter() im Stream-API?
+ Die Methode filter() filtert Elemente des Streams anhand einer Bedingung, z. B.: stream.filter(x -> x > 10).
+
+                                             98. Was ist reduce()?
+ Reduce ist eine Terminal Operation, die die Elemente eines Streams mithilfe einer gegebenen Operation zu einem Ergebniswert kombiniert.
+
+                                             99. Welche Vorteile bietet die Verwendung des Stream-API?
+ Es vereinfacht die Datenverarbeitung, macht den Code deklarativer, kann Parallelverarbeitung effizient nutzen und erhöht die Lesbarkeit.
+
+                                             100. Wie funktioniert parallelStream()?
+ parallelStream() erzeugt einen parallelen Stream, der die Verarbeitung der Elemente auf mehrere Threads verteilt, um die Leistung zu steigern.
+
+                                             101. Was bedeutet Lazy Evaluation bei Streams?
+ Lazy Evaluation heißt, dass die Operationen eines Streams erst ausgeführt werden, wenn eine Terminal Operation aufgerufen wird.
+
+                                             102. Wie sortiert man Daten mithilfe des Stream-API?
+ Mit der Operation sorted(), z. B. stream.sorted() oder mit einem Comparator: stream.sorted(Comparator.naturalOrder()).
+
+                                             103. Was ist flatMap() und wofür wird es verwendet?
+ flatMap() führt mehrere Streams zu einem einzigen zusammen und „flacht“ geschachtelte Datenstrukturen ab.
+
+                                             104. Wie funktioniert collect() im Stream-API?
+ Die collect()-Methode sammelt die Ergebnisse eines Streams in einer Collection oder einem anderen Container, z. B. Collectors.toList().
+
+                                             105. Nenne ein Beispiel für die Verarbeitung numerischer Streams.
+
+IntStream.range(1, 10)
+        .filter(n -> n % 2 == 0)
+        .forEach(System.out::println);
+
+                                             106. Wie verwendet man die peek()-Methode im Stream-API?
+ peek() ermöglicht, Zwischenaktionen (z. B. Logging) auszuführen, ohne die Elemente zu verändern, z. B.: stream.peek(System.out::println).
+
+________________
+
+
+Optional
+                                                107. Was ist Optional in Java?
+ Optional ist ein Container, der möglicherweise einen Wert enthält oder auch nicht, um NullPointerExceptions zu vermeiden.
+
+                                                108. Wie erstellt man ein Optional-Objekt?
+ Mit Optional.of(value), Optional.ofNullable(value) oder Optional.empty().
+
+                                                109. Welche Methoden von Optional verwendet man, um auf einen Wert zu prüfen?
+ Methoden wie isPresent(), ifPresent() und orElse() ermöglichen es, das Vorhandensein des Werts zu prüfen und zu nutzen.
+
+                                                110. Wie verwendet man Optional.orElseThrow()?
+ orElseThrow gibt den Wert zurück, wenn er vorhanden ist, oder löst eine Exception aus (bereitgestellt durch einen Supplier), wenn nicht.
+
+                                                111. Was ist Optional.ifPresentOrElse()?
+ Diese Methode nimmt zwei Parameter: einen Consumer für den vorhandenen Wert und ein Runnable, falls kein Wert vorhanden ist.
+
+________________
+
+
+Datenbanken
+                                                   112. Welche Haupttypen von Datenbanken kennst du?
+ Relationale, nicht-relationale (NoSQL), Graphdatenbanken, dokumentenorientierte, spaltenbasierte usw.
+
+                                                   113. Was ist eine relationale Datenbank?
+ Eine Datenbank, die in Tabellen organisiert ist und Beziehungen zwischen diesen Tabellen aufweist, wobei Daten als Zeilen und Spalten gespeichert werden.
+
+                                                   114. Welche Datenbankmanagementsysteme kennst du?
+ Am bekanntesten sind MySQL, PostgreSQL, Oracle, Microsoft SQL Server, MongoDB (als Beispiel für NoSQL).
+
+                                                   115. Was ist eine Transaktion in einer Datenbank?
+ Eine Transaktion ist eine Abfolge von Operationen, die als Einheit ausgeführt werden, mit der Möglichkeit, sie bei Fehlern zurückzurollen (Rollback).
+
+                                                   116. Wie wird die Datenintegrität sichergestellt?
+ Durch Schlüssel, Constraints, Transaktionen und ACID-Mechanismen (Atomicity, Consistency, Isolation, Durability).
+
+                                                   117. Was ist Datenbanknormalisierung und welche Normalformen gibt es?
+ Normalisierung ist der Prozess, die Struktur der Datenbank zu optimieren, um Redundanz zu verringern, typischerweise beschrieben durch Normalformen von 1NF bis 5NF.
+
+                                                   118. Was ist Denormalisierung und wann wird sie eingesetzt?
+ Denormalisierung ist das bewusste Abweichen von den Normalformen zur Steigerung der Leseperformance, kann jedoch Datenredundanz mit sich bringen.
+
+                                                   119. Wie funktionieren Indizes in relationalen Datenbanken?
+ Indizes beschleunigen den Datenzugriff, indem sie Verweise auf Tabellenzeilen speichern, können aber Schreiboperationen verlangsamen.
+
+________________
+
+
+SQL
+                                                      120. Was ist SQL?
+ SQL (Structured Query Language) ist eine Abfragesprache zur Interaktion mit relationalen Datenbanken.
+
+                                                      121. Wie schreibt man eine einfache SELECT-Abfrage?
+ SELECT * FROM table_name;
+
+                                                      122. Was ist ein JOIN in SQL?
+ JOIN ist eine Operation, die Zeilen aus zwei oder mehr Tabellen anhand einer gemeinsamen Spalte kombiniert.
+
+                                                      123. Welche Arten von JOIN gibt es?
+ Am häufigsten sind INNER JOIN, LEFT JOIN, RIGHT JOIN und FULL OUTER JOIN.
+
+                                                      124. Was sind Aggregatfunktionen in SQL?
+ Aggregatfunktionen (SUM, AVG, COUNT, MIN, MAX) führen Berechnungen über eine Menge von Zeilen durch und geben einen einzigen Wert zurück.
+
+                                                      125. Worin besteht der Unterschied zwischen DELETE, DROP und TRUNCATE?
+
+                                                         * DELETE: Entfernt Zeilen aus einer Tabelle basierend auf einer Bedingung (kann in vielen Systemen innerhalb einer Transaktion zurückgerollt werden).
+                                                         * DROP: Entfernt ein Datenbankobjekt vollständig, z. B. eine Tabelle oder eine ganze Datenbank.
+                                                         * TRUNCATE: Entfernt alle Zeilen einer Tabelle schnell und kann in vielen Systemen nicht zurückgerollt werden.
+________________
+
+
+Spring Boot
+                                                         126. Was ist Spring Boot?
+ Spring Boot ist ein Framework zum Erstellen von Spring-Anwendungen mit minimaler Konfiguration, dank Auto-Konfiguration und vorgefertigten Vorlagen.
+
+                                                         127. Welche Vorteile bietet Spring Boot?
+ Schneller Start, minimale Konfiguration, Auto-Konfiguration, eingebetteter Server, einfache Bereitstellung und Erweiterbarkeit.
+
+                                                         128. Wie erstellt man eine Spring Boot-Anwendung?
+ Man kann den Spring Initializr (start.spring.io) verwenden oder das Projekt manuell aufsetzen, indem man die pom.xml und Konfigurationsklassen erstellt.
+
+                                                         129. Was ist Auto-Konfiguration?
+ Auto-Konfiguration richtet automatisch Spring-Komponenten ein, basierend auf den vorhandenen Abhängigkeiten und Konfigurationen im Projekt.
+
+                                                         130. Wie funktioniert der Spring Initializr?
+ Der Spring Initializr ist ein Webdienst, der ein Spring-Boot-Projekt mit den ausgewählten Abhängigkeiten und Einstellungen generiert.
+
+                                                         131. Was ist eine Starter-Abhängigkeit (Starter Dependency)?
+ Eine Starter-Abhängigkeit ist ein praktisches Set an Bibliotheken, das das Hinzufügen bestimmter Technologien zu einem Spring-Boot-Projekt vereinfacht.
+
+                                                         132. Wie konfiguriert man Anwendungseigenschaften in Spring Boot?
+ Die Eigenschaften werden in application.properties oder application.yml festgelegt, wo man Anwendungseinstellungen definiert.
+
+                                                         133. Was ist Spring Boot Actuator?
+ Actuator bietet fertige Endpunkte für Überwachung, Verwaltung und Analyse der Leistung von Spring-Boot-Anwendungen.
+
+                                                         134. Wie nutzt man Profile in Spring Boot?
+ Profile ermöglichen separate Konfigurationen für verschiedene Umgebungen (dev, prod usw.) über die Konfigurationsdatei oder die Annotation @Profile.
+
+________________
+
+
+HTTP
+                                                            135. Was ist HTTP?
+ HTTP (Hypertext Transfer Protocol) ist das Protokoll für den Datenaustausch zwischen Client und Server im Web.
+
+                                                            136. Welche Haupt-HTTP-Methoden kennst du?
+ Die wichtigsten Methoden sind GET, POST, PUT, DELETE, PATCH, OPTIONS und HEAD.
+
+                                                            137. Was ist eine RESTful API?
+ Eine RESTful API ist ein Architekturstil für Webservices, der HTTP-Methoden nutzt, um Ressourcen (identifiziert durch URLs) zu verwalten.
+
+                                                            138. Was sind HTTP-Statuscodes?
+ Das sind numerische Codes, die der Server zurückgibt, um das Ergebnis einer Anfrage anzuzeigen (z. B. 200 OK, 404 Not Found, 500 Internal Server Error).
+
+                                                            139. Wie funktioniert das HTTPS-Protokoll?
+ HTTPS ist eine sichere Version von HTTP, die SSL/TLS zur Verschlüsselung der Daten verwendet, welche zwischen Client und Server übertragen werden.
+
+                                                            140. Was sind Cookies und wie werden sie im Web eingesetzt?
+ Cookies sind kleine Dateneinheiten, die vom Webserver auf dem Client gespeichert werden, um den Benutzer zu identifizieren, Sitzungszustände zu erhalten und Parameter zu speichern.
+
+________________
+
+
+Spring Data
+                                                               141. Was ist Spring Data?
+ Spring Data ist Teil des Spring-Frameworks und vereinfacht den Umgang mit Datenbanken, indem gängige CRUD-Operationen abstrahiert werden.
+
+                                                               142. Was sind die Hauptkomponenten von Spring Data?
+ Die Hauptkomponenten sind Repositories, Data-Access-Templates (z. B. JdbcTemplate, MongoTemplate) und Mechanismen zur automatischen Erstellung von CRUD-Implementierungen.
+
+                                                               143. Wie funktioniert ein Repository in Spring Data?
+ Ein Repository ist ein Interface, das von Spring Data abgeleitet wird. Es generiert automatisch Implementierungen für Standardoperationen an einer Entität (Speichern, Finden, Löschen).
+
+                                                               144. Was sind CRUD-Operationen in Spring Data?
+ Create, Read, Update und Delete – die grundlegenden Datenbankzugriffe.
+
+                                                               145. Was ist Inversion of Control (IoC) und wie wird sie in Spring umgesetzt?
+ IoC ist das Prinzip, dass die Erstellung und Verwaltung von Objekten dem Container überlassen wird. In Spring wird dies durch Dependency Injection umgesetzt, die Abhängigkeiten automatisch injiziert.
+
+                                                               146. Was ist Dependency Injection (DI) und welche Arten gibt es in Spring?
+ DI ist ein Mechanismus, bei dem Beans ihre Abhängigkeiten automatisch bereitgestellt bekommen. Die Haupttypen sind Konstruktorinjektion, Setter-Injektion und Feldinjektion.
+
+                                                               147. Welche Bean-Scopes gibt es in Spring und wie beeinflussen sie den Lebenszyklus von Objekten?
+ Die wichtigsten Scopes sind singleton (eine Instanz pro Container), prototype (bei jedem Zugriff eine neue Instanz), request, session und application. Diese bestimmen, wie viele Instanzen erstellt werden und wie lange sie existieren.
+
+                                                               148. Wie wird Spring Security zur Authentifizierung und Autorisierung integriert?
+ Spring Security bietet einen umfassenden Schutzmechanismus, der Filter für die Authentifizierung, eine URL-basierte Zugriffskonfiguration und verschiedene Authentifizierungsverfahren (Basic, OAuth2, JWT usw.) umfasst.
+
+                                                               149. Weitere Fragen auf Englisch:
+ https://www.tpointtech.com/corejava-interview-questions

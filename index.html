@@ -17,15 +17,22 @@
 <body>
     <div id="app">
         <header>
-            <button id="back-btn" class="back-btn hidden">
-                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="19" y1="12" x2="5" y2="12"></line>
-                    <polyline points="12 19 5 12 12 5"></polyline>
-                </svg>
-            </button>
+            <div class="header-top">
+                <button id="back-btn" class="back-btn hidden">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                </button>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="ua">UA</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="de">DE</button>
+                </div>
+            </div>
             <div class="header-content">
-                <h1>Interview Test</h1>
+                <h1 data-i18n="app_title">Interview Test</h1>
                 <div id="progress-container" class="hidden">
                     <div class="progress-bar">
                         <div id="progress-fill"></div>
@@ -39,46 +46,46 @@
             <!-- Screen: Home/Topic Selection -->
             <section id="home-screen" class="screen active">
                 <div class="welcome-card">
-                    <h2>Готові до тесту?</h2>
-                    <p>Оберіть категорію або пройдіть всі 148 питань.</p>
+                    <h2 data-i18n="welcome_title">Готові до тесту?</h2>
+                    <p data-i18n="welcome_text">Оберіть категорію або пройдіть всі 148 питань.</p>
                 </div>
                 <div id="topic-list" class="grid">
                     <!-- Topics will be injected here -->
                 </div>
-                <button id="start-all" class="btn primary full">Всі питання</button>
+                <button id="start-all" class="btn primary full" data-i18n="start_all">Всі питання</button>
             </section>
 
             <!-- Screen: Quiz -->
             <section id="quiz-screen" class="screen">
                 <div id="question-card" class="card">
                     <span id="question-category" class="badge">Topic</span>
-                    <h3 id="question-text">Запитання з'явиться тут...</h3>
+                    <h3 id="question-text" data-i18n="loading_question">Запитання з'явиться тут...</h3>
                     <div id="options-list" class="options">
                         <!-- Options will be injected here -->
                     </div>
                 </div>
                 <div class="quiz-controls">
-                    <button id="exit-quiz" class="btn outline">Вийти</button>
-                    <button id="next-question" class="btn primary hidden">Далі</button>
+                    <button id="exit-quiz" class="btn outline" data-i18n="exit_btn">Вийти</button>
+                    <button id="next-question" class="btn primary hidden" data-i18n="next_btn">Далі</button>
                 </div>
             </section>
 
             <!-- Screen: Results -->
             <section id="result-screen" class="screen">
                 <div class="result-card card">
-                    <h2>Тест завершено!</h2>
+                    <h2 data-i18n="result_title">Тест завершено!</h2>
                     <div class="result-stats">
                         <div class="stat">
-                            <span class="label">Результат</span>
+                            <span class="label" data-i18n="result_label">Результат</span>
                             <span id="final-score" class="value">0%</span>
                         </div>
                         <div class="stat">
-                            <span class="label">Правильно</span>
+                            <span class="label" data-i18n="correct_label">Правильно</span>
                             <span id="correct-count" class="value">0/0</span>
                         </div>
                     </div>
                     <p id="result-message"></p>
-                    <button id="restart-btn" class="btn primary full">На головну</button>
+                    <button id="restart-btn" class="btn primary full" data-i18n="home_btn">На головну</button>
                 </div>
             </section>
         </main>
@@ -87,6 +94,8 @@
     <script src="data_part1.js"></script>
     <script src="data_part2.js"></script>
     <script src="data_part3.js"></script>
+    <script src="data_en.js"></script>
+    <script src="data_de.js"></script>
     <script src="script.js"></script>
 </body>
 
