@@ -220,7 +220,7 @@ window.QUIZ_DATA.push(...[
         ]
     },
     {
-        "id": 81, "topic": "Java Collections", "question": "Яка різниця між Array і ArrayList?", "answer": "Масив має фіксований розмір і може містити примітиви; ArrayList має динамічний розмір і працює лише con об’єктами.",
+        "id": 81, "topic": "Java Collections", "question": "Яка різниця між Array і ArrayList?", "answer": "Масив має фіксований розмір і може містити примітиви; ArrayList має динамічний розмір і працює лише з об’єктами.",
         "wrongAnswers": [
             "Масив працює повільніше, ніж ArrayList, у 100 разів.",
             "Array – це частина Java, а ArrayList – це зовнішня бібліотека від Google."
