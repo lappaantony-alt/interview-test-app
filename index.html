@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Backend Interview Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <button id="back-btn" class="back-btn hidden">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </button>
+            <div class="header-content">
+                <h1>Interview Test</h1>
+                <div id="progress-container" class="hidden">
+                    <div class="progress-bar">
+                        <div id="progress-fill"></div>
+                    </div>
+                    <span id="score-text">0/0</span>
+                </div>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <!-- Screen: Home/Topic Selection -->
+            <section id="home-screen" class="screen active">
+                <div class="welcome-card">
+                    <h2>Готові до тесту?</h2>
+                    <p>Оберіть категорію або пройдіть всі 148 питань.</p>
+                </div>
+                <div id="topic-list" class="grid">
+                    <!-- Topics will be injected here -->
+                </div>
+                <button id="start-all" class="btn primary full">Всі питання</button>
+            </section>
+
+            <!-- Screen: Quiz -->
+            <section id="quiz-screen" class="screen">
+                <div id="question-card" class="card">
+                    <span id="question-category" class="badge">Topic</span>
+                    <h3 id="question-text">Запитання з'явиться тут...</h3>
+                    <div id="options-list" class="options">
+                        <!-- Options will be injected here -->
+                    </div>
+                </div>
+                <div class="quiz-controls">
+                    <button id="exit-quiz" class="btn outline">Вийти</button>
+                    <button id="next-question" class="btn primary hidden">Далі</button>
+                </div>
+            </section>
+
+            <!-- Screen: Results -->
+            <section id="result-screen" class="screen">
+                <div class="result-card card">
+                    <h2>Тест завершено!</h2>
+                    <div class="result-stats">
+                        <div class="stat">
+                            <span class="label">Результат</span>
+                            <span id="final-score" class="value">0%</span>
+                        </div>
+                        <div class="stat">
+                            <span class="label">Правильно</span>
+                            <span id="correct-count" class="value">0/0</span>
+                        </div>
+                    </div>
+                    <p id="result-message"></p>
+                    <button id="restart-btn" class="btn primary full">На головну</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="data_part1.js"></script>
+    <script src="data_part2.js"></script>
+    <script src="data_part3.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
